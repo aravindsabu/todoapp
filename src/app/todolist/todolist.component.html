@@ -1,0 +1,33 @@
+<app-taskbar></app-taskbar>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">title</th>
+                        <th scope="col">status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of todolist">
+                        <td>{{i.id}}</td>
+                        <td>{{i.title}}</td>
+                        <td *ngIf="i.completed">
+                            <div class="alert alert-success" role="">
+                                completed
+                            </div>
+                        </td>
+                        <td *ngIf="! i.completed">
+                            <div class="alert alert-danger" role="">
+                                 not completed
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+             
+            </table>
+        </div>
+    </div>
+</div>
